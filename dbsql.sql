@@ -346,9 +346,9 @@ where manager = 199;
                 
 /* 12. retrieve its name and number for each supplier  */
 
-select name
-from items 
-where 
+select a.name, count(distinct b.number) as no_of_items 
+from supplier a join items b on a.number = b.supplier 
+group by name;
 
 
 
